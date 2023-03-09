@@ -3,10 +3,32 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
-export function getClientWithNoMoney(array) {
-  // Your code goes here...
 
+
+
+export function getClientWithNoMoney(array) {
+  let bankrupt = [];
+  for (let i = 0; i < array.length; i++) {
+      if (array[i].balance === 0) {
+          bankrupt.push(array[i].name);
+      }
+  }
+  return bankrupt;
 }
+
+
+
+// export function getClientWithNoMoney(array) {
+// 
+//   let bankrupt = [];
+//   for (let account of array) {
+//     if (account.balance === 0) {
+//       bankrupt.push(account.name);
+//   }
+//   return bankrupt;
+// }
+// }   = what is wrong here
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
